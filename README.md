@@ -1,12 +1,18 @@
 # Thermal Drone Detection
 
-![Demo](docs/demo_detection.gif)
+<div align="center">
+  <img src="docs/demo_detection.gif" alt="Demo" width="720">
+</div>
 
+<p align="justify">
 Real-time thermal camera detection for maritime drone operations. Uses YOLO models fine-tuned on aerial thermal infrared imagery to detect people and vehicles from a drone-mounted thermal camera, with a side-by-side heat-map visualization for situational awareness.
+</p>
 
 ## Demo
 
-The GIF above shows live detection with the thermal camera. The left panel displays the raw thermal feed, and the right panel shows the heat-map colormap with hot-spot contours. Bounding boxes are drawn around detected objects — **Person** (yellow), **Car** (red), **Bicycle** (blue), and **OtherVehicle** (purple).
+<p align="justify">
+The GIF above shows live detection with the thermal camera. The left panel displays the raw thermal feed, and the right panel shows the heat-map colormap with hot-spot contours. Bounding boxes are drawn around detected objects — <strong>Person</strong> (yellow), <strong>Car</strong> (red), <strong>Bicycle</strong> (blue), and <strong>OtherVehicle</strong> (purple).
+</p>
 
 > **Note:** The thermal models are trained on aerial top-down views (60-130m altitude). Close-up objects during ground testing may produce small or inaccurate boxes — switch to the COCO model (`m` key) for close-up testing.
 
@@ -25,7 +31,9 @@ The GIF above shows live detection with the thermal camera. The left panel displ
 
 ## Use Case
 
+<p align="justify">
 Designed for a maritime drone conducting search-and-rescue or surveillance. The thermal camera detects people in water or vessels at sea, where visible-light cameras fail at night or in poor weather. The heat-map provides immediate visual feedback on temperature distribution — warm objects (people, engine heat) stand out against cold water.
+</p>
 
 ## Hardware
 
@@ -92,7 +100,9 @@ python src/thermal_detect.py --help
 
 ### Training dataset
 
-Both thermal models are fine-tuned on the [HIT-UAV dataset](https://github.com/suojiashun/HIT-UAV-Infrared-Thermal-Dataset) — the first publicly available high-altitude UAV-based infrared thermal dataset:
+<p align="justify">
+Both thermal models are fine-tuned on the <a href="https://github.com/suojiashun/HIT-UAV-Infrared-Thermal-Dataset">HIT-UAV dataset</a> — the first publicly available high-altitude UAV-based infrared thermal dataset:
+</p>
 
 - 2,898 thermal images from 43,470 frames
 - Altitude: 60-130 meters
@@ -111,7 +121,9 @@ The YOLO11s model uses thermal-aware training: disabled color jitter (`hsv_h=0, 
 
 ## Heat-map Colormaps
 
+<p align="justify">
 The thermal feed is normalized to full 0-255 range before applying the colormap, ensuring accurate color representation:
+</p>
 
 | Colormap | Gradient | Description |
 |----------|---------|-------------|
@@ -142,10 +154,12 @@ thermal-drone-detection/
 
 ## Notes
 
+<p align="justify">
 - The thermal camera needs ~40 warmup frames before producing valid data (first frames are black)
 - USB reconnection may change `/dev/videoN` — the script auto-detects by device name
 - The aerial thermal models produce small bounding boxes by design (objects are small from altitude)
 - For close-up testing, switch to the COCO model (`m` key) which handles larger objects
+</p>
 
 ## Credits
 
