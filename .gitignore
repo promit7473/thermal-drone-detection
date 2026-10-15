@@ -18,10 +18,8 @@ models/*.pt
 # Snapshots and temp output
 snap_*.png
 *.avi
-*.mp4
-*.webm
 
-# Screen recordings
+# Screen recordings (raw)
 video_thermal/
 
 # OS

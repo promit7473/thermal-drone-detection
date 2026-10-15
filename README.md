@@ -2,7 +2,15 @@
 
 Real-time thermal camera detection for maritime drone operations. Uses YOLO models fine-tuned on aerial thermal infrared imagery to detect people and vehicles from a drone-mounted thermal camera, with a side-by-side heat-map visualization for situational awareness.
 
+<video src="docs/demo_detection.mp4" controls width="100%"></video>
+
 ![Side-by-side thermal detection](docs/test_sidebyside.png)
+
+## Demo
+
+The video above shows live detection with the thermal camera. The left panel displays the raw thermal feed, and the right panel shows the heat-map colormap with hot-spot contours. Bounding boxes are drawn around detected objects — **Person** (yellow), **Car** (red), **Bicycle** (blue), and **OtherVehicle** (purple).
+
+> **Note:** The thermal models are trained on aerial top-down views (60-130m altitude). Close-up objects during ground testing may produce small or inaccurate boxes — switch to the COCO model (`m` key) for close-up testing.
 
 ## Features
 
