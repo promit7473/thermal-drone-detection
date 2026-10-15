@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Model weights — download with `python download_models.py`
+models/*.pt
+
+# Snapshots and temp output
+snap_*.png
+*.avi
+*.mp4
+*.webm
+
+# Screen recordings
+video_thermal/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Partial downloads
+*.part
